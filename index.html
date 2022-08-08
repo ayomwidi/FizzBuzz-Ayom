@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizz Buzz</title>
+</head>
+
+<body>
+    <h1>Get a Fizz Buzz Result</h1>
+    <form>
+        <label for="number">Masukkan Input
+        </label>
+        <input id="number" type="text">
+        <button id="btn">Click here !</button>
+    </form>
+    <div id="hasil">
+
+    </div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const boxHasil = document.getElementById('hasil');
+        btn.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const input = document.getElementById('number').value;
+            const hasil = document.createElement('p');
+            if (input == 0 || input == null) {
+                hasil.textContent = "Invalid";
+                console.log("invalid");
+            } else if (input % 5 == 0 && input % 3 == 0) {
+                hasil.innerHTML = "FizzBuzz";
+            } else if (input % 3 == 0) {
+                hasil.innerHTML = "Fizz";
+            } else if (input % 5 == 0) {
+                hasil.innerHTML = "Buzz";
+            } else {
+                hasil.textContent = input;
+            }
+            boxHasil.append(hasil);
+        })
+    </script>
+</body>
+
+</html>
